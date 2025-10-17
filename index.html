@@ -1,20 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ultrasonic Servo Monitor</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Ultrasonic Distance & Servo Status</h1>
-    <div class="status">
-      <p>Distance: <span id="distance">--</span> cm</p>
-      <p>Servo: <span id="servoState">Closed</span></p>
+  <div class="form-page" id="formPage">
+    <div class="form-container">
+      <h1>💼 Professional Resume Builder</h1>
+      <form id="resumeForm">
+        <label>Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your full name" required />
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="example@gmail.com" required />
+        <label>Phone:</label>
+        <input type="text" id="phone" placeholder="+91 9876543210" required />
+        <label>Education:</label>
+        <textarea id="education" placeholder="Your education details" required></textarea>
+        <label>Skills (comma separated):</label>
+        <textarea id="skills" placeholder="e.g. HTML, CSS, JavaScript" required></textarea>
+        <label>Experience:</label>
+        <textarea id="experience" placeholder="Your work experience or projects" required></textarea>
+        <button type="submit">Generate Resume →</button>
+      </form>
     </div>
-    <div class="visual">
-      <div id="servoLid" class="lid"></div>
+  </div>
+
+  <div class="resume-page" id="resumePage">
+    <div class="resume-container">
+      <div class="resume-sidebar">
+        <h2>Contact</h2>
+        <p id="rEmail"></p>
+        <p id="rPhone"></p>
+        <h2>Skills</h2>
+        <ul id="rSkills"></ul>
+      </div>
+      <div class="resume-main">
+        <div class="resume-header">
+          <h1 id="rName"></h1>
+        </div>
+        <div class="resume-section">
+          <h2>🎓 Education</h2>
+          <p id="rEducation"></p>
+        </div>
+        <div class="resume-section">
+          <h2>💼 Experience</h2>
+          <p id="rExperience"></p>
+        </div>
+        <div class="buttons">
+          <button onclick="window.print()">🖨️ Save as PDF</button>
+          <button id="editBtn">⬅️ Edit Info</button>
+        </div>
+      </div>
     </div>
   </div>
 
